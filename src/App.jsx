@@ -4,6 +4,7 @@ import {
 } from 'react'
 
 import headshot from './assets/headshot.jpg'
+import aboutCircuit from './assets/about-circuit.jpg'
 
 import ContactForm
   from './components/ContactForm.jsx'
@@ -61,17 +62,19 @@ function Header() {
   const [open, setOpen] =
     useState(false)
 
-  const links = [
-    ['About', '#about'],
-    ['Projects', '#projects'],
-    ['Research', '#research'],
-    ['Experience', '#experience'],
-    [
-      'Beyond Engineering',
-      '#beyond',
-    ],
-    ['Contact', '#contact'],
-  ]
+const links = [
+  ['About', '#about'],
+  ['Projects', '#projects'],
+  ['Research', '#research'],
+  ['Experience', '#experience'],
+  ['Education', '#education'],
+  ['Certifications', '#certifications'],
+  [
+    'Beyond Engineering',
+    '#beyond',
+  ],
+  ['Contact', '#contact'],
+]
 
   return (
     <header
@@ -280,6 +283,7 @@ function Hero() {
 
 function About() {
   const interests = [
+    'Power Engineering',
     'ASIC & RTL Design',
     'Computer Architecture',
     'Circuit Design',
@@ -287,7 +291,6 @@ function About() {
     'Quantum Computing',
     'Artificial Intelligence',
     'Applied Mathematics',
-    'Finance',
   ]
 
   return (
@@ -297,7 +300,7 @@ function About() {
     >
       <SectionHeading
         eyebrow="About"
-        title="Human first. Engineer by craft. Curious by nature."
+        title="Fueled by Purpose. Built to Engineer"
       >
         Engineering is a major part
         of what I do, but it is not
@@ -315,15 +318,16 @@ function About() {
             Engineering student at
             Oral Roberts University
             with a minor in
-            Mathematics. I enjoy
-            building systems from
+            Mathematics. My greatest skill 
+            is that I am willing to learn.
+            I enjoy building systems from
             the ground up and
             understanding the theory
             underneath them.
           </p>
 
           <p>
-            My interests span
+            My interests span power distribution,
             digital hardware,
             computer architecture,
             analog circuits,
@@ -351,35 +355,47 @@ function About() {
             it is “what do I need
             to learn to do it well?”
           </p>
-        </div>
 
-        <div
-          className={
-            styles.interestPanel
-          }
-        >
-          <span
-            className={styles.kicker}
+          <div
+            className={styles.aboutPhoto}
           >
-            What I am exploring
-          </span>
+            <img
+              src={aboutCircuit}
+              alt="John Mark Obura working on an electronics circuit in the laboratory"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          </div>
 
           <div
             className={
-              styles.interestCloud
+              styles.interestPanel
             }
           >
-            {interests.map(
-              (interest) => (
-                <span key={interest}>
-                  {interest}
-                </span>
-              ),
-            )}
-          </div>
+            <span
+              className={styles.kicker}
+            >
+              What I am exploring
+            </span>
 
-          <WaveformVisual compact />
-        </div>
+            <div
+              className={
+                styles.interestCloud
+              }
+            >
+              {interests.map(
+                (interest) => (
+                  <span key={interest}>
+                    {interest}
+                  </span>
+                ),
+              )}
+            </div>
+
+            <WaveformVisual compact />
+          </div>
       </div>
     </section>
   )
@@ -572,6 +588,72 @@ function Research() {
 }
 
 function Experience() {
+  const experiences = [
+    {
+      date: 'Aug 2026 — Present',
+      type: 'Research',
+      role: 'Research Assistant',
+      organization: 'Oral Roberts University',
+      location: 'Tulsa, Oklahoma',
+
+      bullets: [
+        'Develop and validate Python, PyTorch, and Qiskit workflows for hybrid quantum-classical stochastic wireless-channel modeling.',
+        'Extend and test research code, run controlled experiments, and evaluate model behavior through numerical and probabilistic analysis.',
+        'Support reproducible experimentation through structured validation, documented configurations, and careful comparison of computational results.',
+      ],
+
+      tags: [
+        'Python',
+        'PyTorch',
+        'Qiskit',
+        'Quantum Computing',
+        'Numerical Validation',
+      ],
+    },
+
+    {
+      date: 'Jan 2025 — Aug 2026',
+      type: 'Technical Support',
+      role: 'IT Support Specialist',
+      organization: 'Oral Roberts University',
+      location: 'Tulsa, Oklahoma',
+
+      bullets: [
+        'Diagnosed and resolved 100+ hardware and software issues using SolarWinds Service Desk across university computing environments.',
+        'Collaborated with the Network Administrator on campus system updates and integrations supporting a community of more than 7,000 students.',
+        'Applied CompTIA A+ and Network+ fundamentals to endpoint troubleshooting, networking, hardware diagnostics, and user support.',
+      ],
+
+      tags: [
+        'Hardware Troubleshooting',
+        'Networking',
+        'SolarWinds',
+        'Systems Support',
+      ],
+    },
+
+    {
+      date: '2026 — Present',
+      type: 'Engineering Leadership',
+      role: 'Secretary',
+      organization: 'IEEE Student Branch · Oral Roberts University',
+      location: 'Tulsa, Oklahoma',
+
+      bullets: [
+        'Support chapter administration, communication, and organization for the university IEEE Student Branch.',
+        'Help organize hands-on technical activities involving circuit design, soldering, embedded systems, and practical hardware skills.',
+        'Contribute to student engineering engagement by helping coordinate technical events and opportunities for peer learning.',
+      ],
+
+      tags: [
+        'IEEE',
+        'Leadership',
+        'Technical Workshops',
+        'Engineering Community',
+      ],
+    },
+  ]
+
   return (
     <section
       id="experience"
@@ -579,92 +661,409 @@ function Experience() {
     >
       <SectionHeading
         eyebrow="Experience"
-        title="Learning by building and serving"
-      />
+        title="Research, technical work, and engineering leadership."
+      >
+        My experience spans research,
+        hands-on technical support,
+        and leadership within the
+        engineering community.
+      </SectionHeading>
 
       <div
-        className={styles.timeline}
+        className={styles.experienceList}
       >
-        <article>
-          <span
-            className={
-              styles.timelineDate
-            }
+        {experiences.map(
+          (experience) => (
+            <article
+              key={`${experience.role}-${experience.organization}`}
+              className={styles.experienceCard}
+            >
+              <div
+                className={styles.experienceMeta}
+              >
+                <span
+                  className={styles.experienceDate}
+                >
+                  {experience.date}
+                </span>
+
+                <span
+                  className={styles.experienceType}
+                >
+                  {experience.type}
+                </span>
+              </div>
+
+              <div
+                className={styles.experienceContent}
+              >
+                <h3>
+                  {experience.role}
+                </h3>
+
+                <p
+                  className={styles.experienceOrganization}
+                >
+                  {experience.organization}
+                  <span aria-hidden="true">
+                    {' · '}
+                  </span>
+                  {experience.location}
+                </p>
+
+                <ul
+                  className={styles.experienceBullets}
+                >
+                  {experience.bullets.map(
+                    (bullet) => (
+                      <li key={bullet}>
+                        {bullet}
+                      </li>
+                    ),
+                  )}
+                </ul>
+
+                <div
+                  className={styles.tagRow}
+                  aria-label={`${experience.role} skills`}
+                >
+                  {experience.tags.map(
+                    (tag) => (
+                      <span key={tag}>
+                        {tag}
+                      </span>
+                    ),
+                  )}
+                </div>
+              </div>
+            </article>
+          ),
+        )}
+      </div>
+    </section>
+  )
+}
+
+function Education() {
+  const coursework = [
+    'Network Analysis I',
+    'Network Analysis II',
+    'Electronics',
+    'Electronics Laboratory',
+    'Engineering Computational Methods',
+    'Control Systems',
+    'Engineering Graphics',
+    'Differential Equations',
+    'Calculus III',
+    'Probability & Statistics',
+    'Digital Systems Design',
+    'Computer Networks & Communications',
+    'Microprocessor Design',
+    'Data Structures',
+  ]
+
+  return (
+    <section
+      id="education"
+      className={styles.section}
+    >
+      <SectionHeading
+        eyebrow="Education"
+        title="Education"
+      >
+        My coursework spans circuits,
+        digital systems, computing,
+        controls, networking, and
+        applied mathematics.
+      </SectionHeading>
+
+      <div
+        className={styles.educationGrid}
+      >
+        <article
+          className={styles.educationCard}
+        >
+          <div
+            className={styles.educationHeader}
           >
-            Aug 2026 — Present
-          </span>
+            <div>
+              <span
+                className={styles.educationYears}
+              >
+                2024 — 2028
+              </span>
 
-          <h3>
-            Research Assistant
-            {' · '}
-            Oral Roberts University
-          </h3>
+              <h3>
+                Oral Roberts University
+              </h3>
 
-          <p>
-            Develop and validate
-            Python, PyTorch, and
-            Qiskit workflows for
-            hybrid quantum-classical
-            stochastic wireless-
-            channel modeling,
-            including training,
-            simulation, numerical
-            verification, and
-            probabilistic evaluation.
-          </p>
+              <p
+                className={
+                  styles.educationLocation
+                }
+              >
+                Tulsa, Oklahoma
+              </p>
+            </div>
+
+            <div
+              className={styles.educationBadge}
+            >
+              GPA 4.0
+            </div>
+          </div>
+
+          <div
+            className={styles.educationDegree}
+          >
+            <h4>
+              B.S. Electrical Engineering
+            </h4>
+
+            <p>
+              Minor in Mathematics
+              {' · '}
+              Honors
+            </p>
+          </div>
+
+          <div
+            className={styles.courseworkSection}
+          >
+            <span
+              className={styles.kicker}
+            >
+              Relevant Coursework
+            </span>
+
+            <div
+              className={styles.courseworkGrid}
+            >
+              {coursework.map(
+                (course) => (
+                  <span key={course}>
+                    {course}
+                  </span>
+                ),
+              )}
+            </div>
+          </div>
         </article>
 
-        <article>
-          <span
-            className={
-              styles.timelineDate
-            }
+        <article
+          className={styles.educationCard}
+        >
+          <div
+            className={styles.educationHeader}
           >
-            Jan 2025 — Aug 2026
-          </span>
+            <div>
+              <span
+                className={styles.educationYears}
+              >
+                2022 — 2024
+              </span>
 
-          <h3>
-            IT Support Specialist
-            {' · '}
-            Oral Roberts University
-          </h3>
+              <h3>
+                Kabojja International School
+              </h3>
 
-          <p>
-            Diagnosed hardware and
-            software issues and
-            collaborated with network
-            administration on campus
-            system updates and
-            integrations.
-          </p>
-        </article>
+              <p
+                className={
+                  styles.educationLocation
+                }
+              >
+                Kampala, Uganda
+              </p>
+            </div>
 
-        <article>
-          <span
-            className={
-              styles.timelineDate
-            }
+            <div
+              className={styles.educationBadge}
+            >
+              3 A*s
+            </div>
+          </div>
+
+          <div
+            className={styles.educationDegree}
           >
-            Leadership
-          </span>
+            <h4>
+              Cambridge International
+              AS & A Level
+            </h4>
 
-          <h3>
-            Secretary
-            {' · '}
-            IEEE Student Branch,
-            Oral Roberts University
-          </h3>
-
-          <p>
-            Support student-branch
-            organization and
-            communication while
-            staying connected to
-            the broader electrical
-            and computer engineering
-            community.
-          </p>
+            <p>
+              GPA 4.0
+            </p>
+          </div>
         </article>
+      </div>
+    </section>
+  )
+}
+
+function Certifications() {
+  const certifications = [
+    {
+      title: 'Complete Python Mastery',
+      issuer: 'Code With Mosh',
+      area: 'Programming · Python',
+
+      certificates: [
+        {
+          label: 'View certificate',
+          file: 'certificates/python-mastery.pdf',
+        },
+      ],
+    },
+
+    {
+      title: 'C++ Programming',
+      issuer: 'Code With Mosh',
+      area: 'Programming · C++',
+
+      certificates: [
+        {
+          label: 'Certificate 1',
+          file: 'certificates/cpp-programming-1.pdf',
+        },
+
+        {
+          label: 'Certificate 2',
+          file: 'certificates/cpp-programming-2.pdf',
+        },
+
+        {
+          label: 'Certificate 3',
+          file: 'certificates/cpp-programming-3.pdf',
+        },
+      ],
+    },
+
+    {
+      title: 'Introduction to Microprocessors',
+      issuer: 'Arm EducationX',
+      area: 'Computer Architecture · Embedded Systems',
+
+      certificates: [
+        {
+          label: 'View certificate',
+          file: 'certificates/arm-microprocessors.pdf',
+        },
+      ],
+    },
+
+    {
+      title: 'Activating Leadership Potential',
+      issuer: 'African Leadership Development Center',
+      area: 'Leadership',
+
+      certificates: [
+        {
+          label: 'View certificate',
+          file: 'certificates/leadership-certificate-alp.pdf',
+        },
+      ],
+    },
+  ]
+
+  function certificateUrl(file) {
+    return (
+      `${import.meta.env.BASE_URL}` +
+      file
+    )
+  }
+
+  return (
+    <section
+      id="certifications"
+      className={styles.section}
+    >
+      <SectionHeading
+        eyebrow="Certifications"
+        title="Learning beyond the classroom."
+      >
+        Additional technical and
+        professional training that
+        has supported my development
+        across programming, computing,
+        engineering, and leadership.
+      </SectionHeading>
+
+      <div
+        className={
+          styles.certificationGrid
+        }
+      >
+        {certifications.map(
+          (certification) => (
+            <article
+              key={certification.title}
+              className={
+                styles.certificationCard
+              }
+            >
+              <div
+                className={
+                  styles.certificateIcon
+                }
+                aria-hidden="true"
+              >
+                ✓
+              </div>
+
+              <div
+                className={
+                  styles.certificateContent
+                }
+              >
+                <span
+                  className={
+                    styles.certificateArea
+                  }
+                >
+                  {certification.area}
+                </span>
+
+                <h3>
+                  {certification.title}
+                </h3>
+
+                <p>
+                  {certification.issuer}
+                </p>
+
+                <div
+                  className={
+                    styles.certificateLinks
+                  }
+                >
+                  {certification.certificates.map(
+                    (certificate) => (
+                      <a
+                        key={certificate.file}
+                        href={certificateUrl(
+                          certificate.file,
+                        )}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={
+                          styles.certificateLink
+                        }
+                      >
+                        {certificate.label}
+                        <span
+                          aria-hidden="true"
+                        >
+                          {' '}↗
+                        </span>
+                      </a>
+                    ),
+                  )}
+                </div>
+              </div>
+            </article>
+          ),
+        )}
       </div>
     </section>
   )
@@ -899,9 +1298,9 @@ function Contact() {
           I am interested in
           internships and
           engineering opportunities
-          across digital hardware,
-          ASIC/RTL, embedded systems,
-          circuits, general
+          across power distribution,
+          digital hardware, ASIC/RTL,
+          embedded systems, circuits, general
           electrical engineering,
           and research.
         </SectionHeading>
@@ -986,6 +1385,10 @@ export default function App() {
         <Research />
 
         <Experience />
+
+        <Education />
+
+        <Certifications />
 
         <Mathematics />
 
