@@ -424,13 +424,7 @@ function Projects({ onOpen }) {
         eyebrow="Engineering work"
         title="Featured projects"
       >
-        The strongest projects lead.
-        The rest stay discoverable
-        so a recruiter in hardware,
-        embedded, data, mathematics,
-        CAD, or general engineering
-        can follow the thread that
-        matters to them.
+        To view more projects, please continue to scroll down.
       </SectionHeading>
 
       <div
