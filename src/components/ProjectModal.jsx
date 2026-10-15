@@ -430,6 +430,28 @@ export default function ProjectModal({
           </section>
         )}
 
+        {project.documents?.length > 0 && (
+          <section
+            className={styles.projectDetailsSection}
+            aria-label="Project drawing sheets"
+          >
+            <h3>Electrical drawing sheets</h3>
+            <div className={styles.projectDialogFooter}>
+              {project.documents.map((document) => (
+                <a
+                  key={document.url}
+                  href={document.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.secondaryButton}
+                >
+                  {document.label} ↗
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
         <footer
           className={
             styles.projectDialogFooter
