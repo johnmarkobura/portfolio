@@ -88,6 +88,46 @@ export const featuredProjects = [
   },
 
   {
+    id: 'residential-revit-mep',
+    title: 'Residential Electrical Design | Revit MEP',
+    eyebrow: 'Electrical Design · Power Distribution · BIM',
+    category: 'Circuits',
+    tags: ['Autodesk Revit MEP', 'Power Distribution', 'BIM', 'Electrical Documentation'],
+    summary:
+      'Modeled and documented the power, lighting, and electrical service systems for a three-bedroom residence using Autodesk Revit 2027 in a tutorial-guided BIM workflow.',
+    metrics: [
+      '120/240 V · single-phase',
+      'Power, lighting & site sheets',
+      'Panel P1 & circuit schedule',
+      'Revit 2027 · BIM coordination',
+    ],
+    details: [
+      'Coordinated linked architectural and mechanical models to place receptacles, dedicated appliance connections, lighting fixtures, switches, and electrical equipment.',
+      'Assigned residential branch circuits, configured panelboard P1, and generated a panel schedule documenting the 120/240 V single-phase distribution system.',
+      'Prepared electrical power, lighting, and site drawings together with a one-line diagram representing the utility transformer, meter, and panelboard service pathway.',
+      'Produced E101 electrical site, E201 lighting, and E301 power drawing sheets. The work is an educational, tutorial-guided design exercise and is not issued for construction.',
+      'Acknowledgment: Completed following Electric Rob’s Revit MEP Electrical tutorial from MFIA Inc. Consulting Engineers, using course-provided architectural and mechanical teaching resources.',
+    ],
+    visual: 'electrical-plan',
+    github: 'https://github.com/johnmarkobura/Residential-3bedroom-Electrical-Design-Revit',
+    documents: [
+      {
+        label: 'E101 · Electrical Site Plan',
+        url: 'https://github.com/johnmarkobura/Residential-3bedroom-Electrical-Design-Revit/blob/main/Electrical%20Sheets/E101%20-%20SITE%20PLAN%20ELECTRICAL%20SHEET.pdf',
+      },
+      {
+        label: 'E201 · Lighting Plan',
+        url: 'https://github.com/johnmarkobura/Residential-3bedroom-Electrical-Design-Revit/blob/main/Electrical%20Sheets/E201%20-%20FLOOR%20PLAN%20LIGHTING%20SHEET.pdf',
+      },
+      {
+        label: 'E301 · Power Plan',
+        url: 'https://github.com/johnmarkobura/Residential-3bedroom-Electrical-Design-Revit/blob/main/Electrical%20Sheets/E301%20-%20FLOOR%20PLAN%20-%20POWER%20SHEET.pdf',
+      },
+    ],
+    assetHint: 'Project drawing PDFs are available through the linked electrical sheets.',
+  },
+
+  {
     id: 'temperature-controller',
     title: 'Analog Temperature Controller',
     eyebrow: 'Circuits · Hardware Validation',
