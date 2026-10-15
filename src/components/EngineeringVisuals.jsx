@@ -255,6 +255,42 @@ export function PowerSupplyVisual({ compact = false }) {
 
 
 // ============================================================
+// RESIDENTIAL ELECTRICAL BIM — conceptual card illustration
+// Actual construction drawing PDFs are linked in project details.
+// ============================================================
+export function ElectricalPlanVisual({ compact = false }) {
+  return (
+    <div
+      className={`${styles.waveform} ${compact ? styles.compactVisual : ''}`}
+      aria-hidden="true"
+    >
+      <svg viewBox="0 0 500 150" role="presentation" focusable="false">
+        <path className={styles.gridLine} d="M0 30H500 M0 75H500 M0 120H500 M50 0V150 M150 0V150 M250 0V150 M350 0V150 M450 0V150" />
+        <g fill="none" stroke="#6688a1" strokeWidth="2.5" strokeLinejoin="round">
+          <path d="M45 18H332V132H45Z M45 84H206V18 M206 84V132 M206 70H332 M266 70V132" />
+          <path d="M45 45H122 M122 45V84" strokeDasharray="7 6" />
+          <path d="M118 18V32 M206 58V70 M266 95V108" stroke="#f5fbff" strokeWidth="5" />
+        </g>
+        <g fill="none" stroke="#0e7490" strokeWidth="2" strokeLinecap="round">
+          <path d="M388 42H354V108H304 M354 70H230 M354 42H160V104H105" strokeDasharray="5 5" />
+          <circle cx="105" cy="104" r="7" fill="#f5fbff" strokeWidth="2.5" />
+          <circle cx="230" cy="70" r="7" fill="#f5fbff" strokeWidth="2.5" />
+          <circle cx="304" cy="108" r="7" fill="#f5fbff" strokeWidth="2.5" />
+        </g>
+        <rect x="373" y="26" width="74" height="34" rx="6" fill="#e1f4ff" stroke="#1673a6" strokeWidth="2" />
+        <text x="410" y="48" textAnchor="middle" fill="#07517b" fontSize="16" fontWeight="700">P1</text>
+        <text x="410" y="82" textAnchor="middle" fill="#286383" fontSize="12">120/240 V</text>
+        <text x="410" y="97" textAnchor="middle" fill="#286383" fontSize="11">1-PHASE</text>
+        <g stroke="#2584bd" strokeWidth="2.2">
+          <path d="M79 44h18 m-9 -9v18 M278 39h18 m-9 -9v18 M151 112h18 m-9 -9v18" />
+        </g>
+      </svg>
+    </div>
+  )
+}
+
+
+// ============================================================
 // BRIDGE / DYNAMIC SYSTEM RESPONSE
 // Damped oscillatory response rather than a digital waveform
 // ============================================================
@@ -423,6 +459,10 @@ export function ProjectVisual({
     return (
       <PowerSupplyVisual compact={compact} />
     )
+  }
+
+  if (type === 'electrical-plan') {
+    return <ElectricalPlanVisual compact={compact} />
   }
 
   if (type === 'damped-response') {
