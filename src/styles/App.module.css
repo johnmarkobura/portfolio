@@ -3365,3 +3365,323 @@
 
   display: block;
 }
+
+/* ============================================================
+   ROYAL NAVY + GOLD EDITORIAL OVERRIDES
+   ============================================================ */
+
+.primaryButton,
+.secondaryButton,
+.mutedButton {
+  border-radius: 2px;
+}
+
+.proseCard,
+.interestPanel,
+.lifeCard,
+.timeline article,
+.honorsGrid article,
+.contactForm,
+.experienceCard,
+.educationCard,
+.certificationCard {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.interestCloud span,
+.tagRow span,
+.courseworkGrid span,
+.experienceType,
+.educationBadge {
+  border-radius: 2px;
+}
+
+.interestCloud span,
+.tagRow span {
+  border-color: #d8d0bd;
+  background: rgba(255, 255, 255, 0.38);
+  color: var(--navy-850);
+  font-size: 0.76rem;
+}
+
+.filters button:hover,
+.filters .activeFilter {
+  border-color: var(--gold-700);
+  background: var(--navy-950);
+  color: var(--ivory-100);
+}
+
+.pipeline,
+.waveform,
+.quantum,
+.genericVisual {
+  background:
+    linear-gradient(
+      145deg,
+      #1b263b,
+      #0d1b2a
+    );
+
+  border-bottom:
+    1px solid
+    rgba(212, 175, 55, 0.28);
+}
+
+.quantumCore {
+  background: var(--gold-500);
+
+  box-shadow:
+    0 0 0 16px
+    rgba(212, 175, 55, 0.10);
+}
+
+.orbit {
+  border-color:
+    rgba(212, 175, 55, 0.34);
+}
+
+.orbit i {
+  background: var(--ivory-100);
+
+  box-shadow:
+    0 0 14px
+    rgba(212, 175, 55, 0.46);
+}
+
+.quantumLabel {
+  color: var(--gold-500);
+}
+
+.moreProjectsHeader h3,
+.timeline h3,
+.lifeCard h3,
+.honorsGrid h3,
+.experienceContent h3,
+.educationHeader h3,
+.educationDegree h4,
+.certificationContent h3,
+.projectDialogHeader h2,
+.projectDetailsSection h3 {
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+}
+
+.moreProjectsHeader h3 {
+  color: var(--navy-950);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.experienceCard,
+.educationCard,
+.certificationCard {
+  border:
+    1px solid #d8d0bd;
+
+  background:
+    rgba(252, 250, 244, 0.82);
+}
+
+.experienceCard::before {
+  background: var(--gold-500);
+}
+
+.experienceCard:hover,
+.certificationCard:hover {
+  border-color:
+    rgba(154, 117, 28, 0.66);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(13, 27, 42, 0.08);
+}
+
+.educationBadge {
+  border:
+    1px solid
+    rgba(154, 117, 28, 0.38);
+
+  background:
+    rgba(212, 175, 55, 0.09);
+
+  color:
+    var(--gold-700);
+}
+
+.courseworkGrid span {
+  border:
+    1px solid #ddd4bf;
+
+  background:
+    rgba(247, 243, 233, 0.66);
+}
+
+.lifeCard > span,
+.certificateIcon {
+  color: var(--gold-700);
+}
+
+.lifeCard {
+  border-top:
+    3px solid
+    var(--navy-850);
+}
+
+.honorsGrid article {
+  border-left:
+    2px solid
+    rgba(212, 175, 55, 0.7);
+}
+
+.contactSection {
+  position: relative;
+
+  border-top:
+    1px solid
+    rgba(212, 175, 55, 0.28);
+}
+
+.contactLinks a {
+  color: var(--navy-850);
+}
+
+.contactLinks a:hover {
+  color: var(--gold-700);
+}
+
+.contactForm input,
+.contactForm textarea {
+  border-radius: 0;
+  border-color: #d8d0bd;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.footer {
+  border-top:
+    1px solid
+    rgba(212, 175, 55, 0.28);
+
+  background:
+    var(--navy-950);
+
+  color:
+    rgba(247, 243, 233, 0.68);
+}
+
+.footer a {
+  color: var(--gold-500);
+}
+
+.projectDialog {
+  background: transparent;
+}
+
+.projectDialogClose {
+  border:
+    1px solid
+    rgba(154, 117, 28, 0.32);
+
+  border-radius: 2px;
+
+  background:
+    var(--paper);
+
+  color:
+    var(--navy-950);
+
+  box-shadow: none;
+}
+
+.projectDialogClose:hover {
+  background:
+    var(--ivory-100);
+}
+
+.projectDialogHeader h2 {
+  color:
+    var(--navy-950);
+
+  font-weight: 700;
+}
+
+.projectDialogHeader > p {
+  color: var(--muted);
+}
+
+.projectDialogFooter .secondaryButton {
+  border-color: #cfc6b2;
+  background: transparent;
+  color: var(--navy-950);
+}
+
+.projectDialogFooter .secondaryButton:hover {
+  border-color: var(--gold-700);
+  background: rgba(212, 175, 55, 0.07);
+}
+
+.projectMetricGrid > div,
+.projectDetailGrid article {
+  border-radius: 0;
+  border-color: #d8d0bd;
+  background: rgba(247, 243, 233, 0.6);
+}
+
+.projectDetailGrid article > span {
+  color: var(--gold-700);
+}
+
+@media (max-width: 760px) {
+  .nav {
+    border:
+      1px solid
+      rgba(212, 175, 55, 0.30);
+
+    border-radius: 0;
+
+    background:
+      rgba(13, 27, 42, 0.98);
+
+    box-shadow:
+      0 24px 48px
+      rgba(0, 0, 0, 0.28);
+  }
+
+  .nav a {
+    color:
+      rgba(247, 243, 233, 0.82);
+  }
+
+  .nav a:hover {
+    color: var(--gold-500);
+  }
+
+  .menuButton {
+    color: var(--ivory-100);
+  }
+
+  .heroCopy h1 {
+    font-size:
+      clamp(3.8rem, 18vw, 6rem);
+  }
+
+  .heroVisual::before {
+    inset: 7% 2% 2% 8%;
+  }
+
+  .photoFrame {
+    box-shadow:
+      16px 16px 0
+      rgba(65, 90, 119, 0.16);
+  }
+
+  .section {
+    margin-inline: -0.4rem;
+    padding-inline: 1.1rem;
+  }
+}
